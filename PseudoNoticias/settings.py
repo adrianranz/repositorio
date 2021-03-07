@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'ProyectoFinal',
         'Trusted_Connection':'yes',
-        'HOST': 'localhost\SQLEXPRESS02',
+        'HOST': 'localhost\SQLEXPRESS',
         'OPTIONS': {
             'driver':'SQL Server Native Client 11.0',
         }

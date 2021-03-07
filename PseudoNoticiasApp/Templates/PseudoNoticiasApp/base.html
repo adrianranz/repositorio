@@ -46,11 +46,18 @@
           <li class="nav-item {% if request.path == '/whoweare/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Quienes Somos' %}">Quienes Somos</a>
           </li>
+          {% if user.is_authenticated %}
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'profile' %}">Profile</a>
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'logout' %}">Logout</a>
+          {% else %}
+
           <li class="nav-item {% if request.path|slice:':6' == '/login/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">login</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Login</a>
           </li>
-
-
+          <li>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'register' %}">Register</a>
+          {% endif %}
+          </li>
         </ul>
       </div>
     </div>

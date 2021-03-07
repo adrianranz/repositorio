@@ -30,12 +30,14 @@ ALLOWED_HOSTS = []
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'login'
 LOGOUT_REDIRECT_URL = '/'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,7 +50,7 @@ INSTALLED_APPS = [
     'contacto',
     'colorfield',
     'crispy_forms',
-    'users',
+    
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -139,14 +141,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-
-
-MEDIA_URL='/media/'
-MEDIA_ROOT=BASE_DIR / 'media'
-
-
 
 #configuración de email.
 
